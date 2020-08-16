@@ -1438,7 +1438,8 @@ class Experimentation:
         epsilon = int(args.epsilon * 255)
         gamma = args.gamma
         n_examples = args.examples
-        t = i = args.item
+        i = random.randint(0, len(self.items_data)-1) # segment
+        t = random.randint(0, len(self.items_data)-1) # push
 
         while True:
             users = [u for u, items in enumerate(self.user_items) if t in items]
@@ -1686,7 +1687,8 @@ class Experimentation:
 
         steps = args.steps
         epsilon = args.epsilon
-        t = i = args.item
+        i = random.randint(0, len(self.items_data)-1) # segment
+        t = random.randint(0, len(self.items_data)-1) # push
 
         while True:
             users = [u for u, items in enumerate(self.user_items) if t in items]
